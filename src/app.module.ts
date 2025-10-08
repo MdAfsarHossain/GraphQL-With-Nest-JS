@@ -24,3 +24,17 @@ import { join } from 'path';
   providers: [AppService],
 })
 export class AppModule { }
+
+
+// import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+// import { GraphQLModule } from '@nestjs/graphql';
+
+// @Module({
+//   imports: [
+//     GraphQLModule.forRoot<ApolloDriverConfig>({
+//       driver: ApolloDriver,
+//       autoSchemaFile: true,
+//     }),
+//   ],
+// })
+// export class AppModule {}
