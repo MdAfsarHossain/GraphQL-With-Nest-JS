@@ -97,8 +97,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 
-
---
+---
 
 ```js
 npm i @nestjs/apollo @nestjs/graphql apollo-server-express class-transformer class-validator graphql
@@ -116,9 +115,100 @@ nest g service book
 nest g controller book
 ```
 
-
 ```js
 nest g resolver book/resolvers/book --flat
 ```
 
---
+```js
+http://localhost:3000/graphql
+```
+
+```js
+npm install @as-integrations/express5 --legacy-peer-deps
+```
+
+---
+
+---
+
+## GraphQL - Query
+
+```js
+# Write your query or mutation here
+# Create A New Book
+# mutation {
+#   createBook(input: {
+#     title: "Node JS",
+#     author: "Afsar"
+#   }){
+#     _id,
+#     title,
+#     author
+#   }
+# }
+
+# Get all books
+# query {
+#   getAllBooks{
+#     _id,
+#     title,
+#     author
+#   }
+# }
+
+# Get Single book
+# query {
+#   getBook(id: "68e7969646df255e6496c9af") {
+#     _id,
+#     title,
+#     author
+#   }
+# }
+
+# Delete a single book
+# mutation {
+#   deleteBook(id: "68e7969646df255e6496c9af")
+# }
+
+# Update a single book
+# mutation {
+#   updateBook(input:{
+#     id: "68e7969f46df255e6496c9b1",
+#     author: "Tarek"
+#   }) {
+#     _id,
+#     title,
+#     author
+#   }
+# }
+```
+
+```js
+
+```
+
+```js
+
+```
+
+```js
+
+```
+
+```js
+
+```
+
+```js
+
+```
+
+```js
+
+```
+
+```js
+
+```
+
+---
