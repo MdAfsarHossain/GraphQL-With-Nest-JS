@@ -1,12 +1,13 @@
+/* eslint-disable prettier/prettier */
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+import { GraphQLModule } from '@nestjs/graphql';
+import { MongooseModule } from '@nestjs/mongoose';
+import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { MongooseModule } from '@nestjs/mongoose';
-import { ConfigModule } from '@nestjs/config';
 import { BookModule } from './book/book.module';
-import { GraphQLModule } from '@nestjs/graphql';
-import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { join } from 'path';
 
 @Module({
   imports: [
@@ -15,26 +16,12 @@ import { join } from 'path';
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       sortSchema: true,
-      playground: true
+      playground: true,
     }),
     MongooseModule.forRoot(process.env.DATABASE_URL!),
-    BookModule
+    BookModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
-
-
-// import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-// import { GraphQLModule } from '@nestjs/graphql';
-
-// @Module({
-//   imports: [
-//     GraphQLModule.forRoot<ApolloDriverConfig>({
-//       driver: ApolloDriver,
-//       autoSchemaFile: true,
-//     }),
-//   ],
-// })
-// export class AppModule {}
+export class AppModule {}
