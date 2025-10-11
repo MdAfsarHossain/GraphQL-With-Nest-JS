@@ -17,6 +17,7 @@ import { BookModule } from './book/book.module';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       sortSchema: true,
       playground: true,
+      graphiql: true
     }),
     MongooseModule.forRoot(process.env.DATABASE_URL!),
     BookModule,
